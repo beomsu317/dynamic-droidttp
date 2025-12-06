@@ -1,0 +1,571 @@
+{
+    "data": {
+        "Zenbox": {
+            "tactics": [
+                {
+                    "id": "TA0031",
+                    "name": "Credential Access",
+                    "link": "https://attack.mitre.org/tactics/TA0031/",
+                    "description": "The adversary is trying to steal account names, passwords, or other secrets that enable access to resources.\n\nCredential access represents techniques that can be used by adversaries to obtain access to or control over passwords, tokens, cryptographic keys, or other values that could be used by an adversary to gain unauthorized access to resources. Credential access allows the adversary to assume the identity of an account, with all of that account's permissions on the system and network, and makes it harder for defenders to detect the adversary. With sufficient access within a network, an adversary can create accounts for later use within the environment.",
+                    "techniques": [
+                        {
+                            "id": "T1412",
+                            "name": "Capture SMS Messages",
+                            "link": "https://attack.mitre.org/techniques/T1412/",
+                            "description": "A malicious application could capture sensitive data sent via SMS, including authentication credentials. SMS is frequently used to transmit codes used for multi-factor authentication.\nOn Android, a malicious application must request and obtain permission (either at app install time or run time) in order to receive SMS messages. Alternatively, a malicious application could attempt to perform an operating system privilege escalation attack to bypass the permission requirement.\nOn iOS, applications cannot access SMS messages in normal operation, so an adversary would need to attempt to perform an operating system privilege escalation attack to potentially be able to access SMS messages.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries SMS data",
+                                    "match_data": [
+                                        "android.net.Uri.parse(\"content://sms/inbox\")",
+                                        "android.net.Uri.parse(\"content://sms/sent\")"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0035",
+                    "name": "Collection",
+                    "link": "https://attack.mitre.org/tactics/TA0035/",
+                    "description": "The adversary is trying to gather data of interest to their goal.\n\nCollection consists of techniques used to identify and gather information, such as sensitive files, from a target network prior to exfiltration. This category also covers locations on a system or network where the adversary may look for information to exfiltrate.",
+                    "techniques": [
+                        {
+                            "id": "T1412",
+                            "name": "Capture SMS Messages",
+                            "link": "https://attack.mitre.org/techniques/T1412/",
+                            "description": "A malicious application could capture sensitive data sent via SMS, including authentication credentials. SMS is frequently used to transmit codes used for multi-factor authentication.\nOn Android, a malicious application must request and obtain permission (either at app install time or run time) in order to receive SMS messages. Alternatively, a malicious application could attempt to perform an operating system privilege escalation attack to bypass the permission requirement.\nOn iOS, applications cannot access SMS messages in normal operation, so an adversary would need to attempt to perform an operating system privilege escalation attack to potentially be able to access SMS messages.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries SMS data",
+                                    "match_data": [
+                                        "android.net.Uri.parse(\"content://sms/inbox\")",
+                                        "android.net.Uri.parse(\"content://sms/sent\")"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1430",
+                            "name": "Location Tracking",
+                            "link": "https://attack.mitre.org/techniques/T1430/",
+                            "description": "Adversaries may track a device\u2019s physical location through use of standard operating system APIs via malicious or exploited applications on the compromised device. \nOn Android, applications holding the ACCESS_COAURSE_LOCATION or ACCESS_FINE_LOCATION permissions provide access to the device\u2019s physical location. On Android 10 and up, declaration of the ACCESS_BACKGROUND_LOCATION permission in an application\u2019s manifest will allow applications to request location access even when the application is running in the background. Some adversaries have utilized integration of Baidu map services to retrieve geographical location once the location access permissions had been obtained. \nOn iOS, applications must include the NSLocationWhenInUseUsageDescription, NSLocationAlwaysAndWhenInUseUsageDescription, and/or NSLocationAlwaysUsageDescription keys in their Info.plist file depending on the extent of requested access to location information. On iOS 8.0 and up, applications call requestWhenInUseAuthorization() to request access to location information when the application is in use or requestAlwaysAuthorization() to request access to location information regardless of whether the application is in use. With elevated privileges, an adversary may be able to access location data without explicit user consent with the com.apple.locationd.preauthorized entitlement key.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to query the current location",
+                                    "match_data": [
+                                        "android.permission.ACCESS_FINE_LOCATION"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the phones location (GPS)",
+                                    "match_data": [
+                                        "android.telephony.TelephonyManager.getCellLocation"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1432",
+                            "name": "Access Contact List",
+                            "link": "https://attack.mitre.org/techniques/T1432/",
+                            "description": "An adversary could call standard operating system APIs from a malicious application to gather contact list (i.e., address book) data, or with escalated privileges could directly access files containing contact list data.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries phone contact information",
+                                    "match_data": [
+                                        "android.provider.ContactsContract$CommonDataKinds$Phone.CONTENT_URI"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1429",
+                            "name": "Audio Capture",
+                            "link": "https://attack.mitre.org/techniques/T1429/",
+                            "description": "Adversaries may capture audio to collect information by leveraging standard operating system APIs of a mobile device. Examples of audio information adversaries may target include user conversations, surroundings, phone calls, or other sensitive information. \nAndroid and iOS, by default, require that applications request device microphone access from the user.  \nOn Android devices, applications must hold the RECORD_AUDIO permission to access the microphone or the CAPTURE_AUDIO_OUTPUT permission to access audio output. Because Android does not allow third-party applications to hold the CAPTURE_AUDIO_OUTPUT permission by default, only privileged applications, such as those distributed by Google or the device vendor, can access audio output. However, adversaries may be able to gain this access after successfully elevating their privileges. With the CAPTURE_AUDIO_OUTPUT permission, adversaries may pass the MediaRecorder.AudioSource.VOICE_CALL constant to MediaRecorder.setAudioOutput, allowing capture of both voice call uplink and downlink. \nOn iOS devices, applications must include the NSMicrophoneUsageDescription key in their Info.plist file to access the microphone.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Records audio/media",
+                                    "match_data": [
+                                        "android.media.AudioRecord.startRecording"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to record audio in the background",
+                                    "match_data": [
+                                        "android.permission.RECORD_AUDIO"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Accesses the audio/media managers",
+                                    "match_data": [
+                                        "android.media.AudioRecord.<init>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1507",
+                            "name": "Network Information Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1507/",
+                            "description": "Adversaries may use device sensors to collect information about nearby networks, such as Wi-Fi and Bluetooth.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Checks an internet connection is available",
+                                    "match_data": [
+                                        "android.net.ConnectivityManager.getActiveNetworkInfo",
+                                        "android.net.NetworkInfo.isConnected"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0032",
+                    "name": "Discovery",
+                    "link": "https://attack.mitre.org/tactics/TA0032/",
+                    "description": "The adversary is trying to figure out your environment.\n\nDiscovery consists of techniques that allow the adversary to gain knowledge about the characteristics of the mobile device and potentially other networked systems. When adversaries gain access to a new system, they must orient themselves to what they now have control of and what benefits operating from that system give to their current objective or overall goals during the intrusion. The operating system may provide capabilities that aid in this post-compromise information-gathering phase.",
+                    "techniques": [
+                        {
+                            "id": "T1421",
+                            "name": "System Network Connections Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1421/",
+                            "description": "Adversaries may attempt to get a listing of network connections to or from the compromised device they are currently accessing or from remote systems by querying for information over the network. \nThis is typically accomplished by utilizing device APIs to collect information about nearby networks, such as Wi-Fi, Bluetooth, and cellular tower connections. On Android, this can be done by querying the respective APIs: \n\n\nWifiInfo for information about the current Wi-Fi connection, as well as nearby Wi-Fi networks. Querying the WiFiInfo API requires the application to hold the ACCESS_FINE_LOCATION permission. \n\n\nBluetoothAdapter for information about Bluetooth devices, which also requires the application to hold several permissions granted by the user at runtime. \n\n\nFor Android versions prior to Q, applications can use the TelephonyManager.getNeighboringCellInfo() method. For Q and later, applications can use the TelephonyManager.getAllCellInfo() method. Both methods require the application hold the ACCESS_FINE_LOCATION permission.\n\n",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Checks an internet connection is available",
+                                    "match_data": [
+                                        "android.net.ConnectivityManager.getActiveNetworkInfo",
+                                        "android.net.NetworkInfo.isConnected"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1430",
+                            "name": "Location Tracking",
+                            "link": "https://attack.mitre.org/techniques/T1430/",
+                            "description": "Adversaries may track a device\u2019s physical location through use of standard operating system APIs via malicious or exploited applications on the compromised device. \nOn Android, applications holding the ACCESS_COAURSE_LOCATION or ACCESS_FINE_LOCATION permissions provide access to the device\u2019s physical location. On Android 10 and up, declaration of the ACCESS_BACKGROUND_LOCATION permission in an application\u2019s manifest will allow applications to request location access even when the application is running in the background. Some adversaries have utilized integration of Baidu map services to retrieve geographical location once the location access permissions had been obtained. \nOn iOS, applications must include the NSLocationWhenInUseUsageDescription, NSLocationAlwaysAndWhenInUseUsageDescription, and/or NSLocationAlwaysUsageDescription keys in their Info.plist file depending on the extent of requested access to location information. On iOS 8.0 and up, applications call requestWhenInUseAuthorization() to request access to location information when the application is in use or requestAlwaysAuthorization() to request access to location information regardless of whether the application is in use. With elevated privileges, an adversary may be able to access location data without explicit user consent with the com.apple.locationd.preauthorized entitlement key.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to query the current location",
+                                    "match_data": [
+                                        "android.permission.ACCESS_FINE_LOCATION"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the phones location (GPS)",
+                                    "match_data": [
+                                        "android.telephony.TelephonyManager.getCellLocation"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1426",
+                            "name": "System Information Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1426/",
+                            "description": "Adversaries may attempt to get detailed information about a device\u2019s operating system and hardware, including versions, patches, and architecture. Adversaries may use the information from System Information Discovery during automated discovery to shape follow-on behaviors, including whether or not to fully infects the target and/or attempts specific actions. \nOn Android, much of this information is programmatically accessible to applications through the android.os.Build class.  iOS is much more restrictive with what information is visible to applications. Typically, applications will only be able to query the device model and which version of iOS it is running. ",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the unqiue device ID (IMEI, MEID or ESN)",
+                                    "match_data": [
+                                        "android.telephony.TelephonyManager.getDeviceId",
+                                        "android.telephony.TelephonyManager.getLine1Number"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries several sensitive phone informations",
+                                    "match_data": [
+                                        "\"type\"",
+                                        "\"version\"",
+                                        "\"phone\"",
+                                        "\"model\"",
+                                        "\"time\"",
+                                        "\"brand\""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0011",
+                    "name": "Command and Control",
+                    "link": "https://attack.mitre.org/tactics/TA0011/",
+                    "description": "The adversary is trying to communicate with compromised systems to control them.\n\nCommand and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim\u2019s network structure and defenses.",
+                    "techniques": [
+                        {
+                            "id": "T1573",
+                            "name": "Encrypted Channel",
+                            "link": "https://attack.mitre.org/techniques/T1573/",
+                            "description": "Adversaries may employ an encryption algorithm to conceal command and control traffic rather than relying on any inherent protections provided by a communication protocol. Despite the use of a secure algorithm, these implementations may be vulnerable to reverse engineering if secret keys are encoded and/or generated within malware samples/configuration files.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Uses HTTPS",
+                                    "match_data": [
+                                        "HTTP traffic on port 46794 -> 443",
+                                        "HTTP traffic on port 443 -> 54618",
+                                        "HTTP traffic on port 443 -> 54616",
+                                        "HTTP traffic on port 54616 -> 443",
+                                        "HTTP traffic on port 443 -> 54610",
+                                        "HTTP traffic on port 54612 -> 443",
+                                        "HTTP traffic on port 54590 -> 443",
+                                        "HTTP traffic on port 54594 -> 443",
+                                        "HTTP traffic on port 443 -> 54614",
+                                        "HTTP traffic on port 443 -> 54612",
+                                        "HTTP traffic on port 53142 -> 443",
+                                        "HTTP traffic on port 54606 -> 443",
+                                        "HTTP traffic on port 54552 -> 443",
+                                        "HTTP traffic on port 43190 -> 443",
+                                        "HTTP traffic on port 54602 -> 443",
+                                        "HTTP traffic on port 443 -> 54628",
+                                        "HTTP traffic on port 443 -> 54626",
+                                        "HTTP traffic on port 443 -> 54588",
+                                        "HTTP traffic on port 443 -> 54620",
+                                        "HTTP traffic on port 54636 -> 443",
+                                        "HTTP traffic on port 443 -> 43190",
+                                        "HTTP traffic on port 55284 -> 443",
+                                        "HTTP traffic on port 443 -> 54624",
+                                        "HTTP traffic on port 443 -> 54622",
+                                        "HTTP traffic on port 443 -> 54590",
+                                        "HTTP traffic on port 443 -> 33552",
+                                        "HTTP traffic on port 54632 -> 443",
+                                        "HTTP traffic on port 443 -> 54594",
+                                        "HTTP traffic on port 443 -> 53142",
+                                        "HTTP traffic on port 443 -> 54592",
+                                        "HTTP traffic on port 54626 -> 443",
+                                        "HTTP traffic on port 54622 -> 443",
+                                        "HTTP traffic on port 55290 -> 443",
+                                        "HTTP traffic on port 54618 -> 443",
+                                        "HTTP traffic on port 54620 -> 443",
+                                        "HTTP traffic on port 443 -> 54632",
+                                        "HTTP traffic on port 443 -> 54598",
+                                        "HTTP traffic on port 54592 -> 443",
+                                        "HTTP traffic on port 443 -> 54630",
+                                        "HTTP traffic on port 443 -> 54552",
+                                        "HTTP traffic on port 443 -> 54596",
+                                        "HTTP traffic on port 54614 -> 443",
+                                        "HTTP traffic on port 54610 -> 443",
+                                        "HTTP traffic on port 443 -> 54636",
+                                        "HTTP traffic on port 443 -> 51402",
+                                        "HTTP traffic on port 443 -> 54634",
+                                        "HTTP traffic on port 54596 -> 443",
+                                        "HTTP traffic on port 54608 -> 443",
+                                        "HTTP traffic on port 443 -> 54560",
+                                        "HTTP traffic on port 54604 -> 443",
+                                        "HTTP traffic on port 443 -> 48108",
+                                        "HTTP traffic on port 54600 -> 443",
+                                        "HTTP traffic on port 55282 -> 443",
+                                        "HTTP traffic on port 46804 -> 443",
+                                        "HTTP traffic on port 54560 -> 443",
+                                        "HTTP traffic on port 443 -> 54606",
+                                        "HTTP traffic on port 443 -> 54604",
+                                        "HTTP traffic on port 443 -> 54608",
+                                        "HTTP traffic on port 48108 -> 443",
+                                        "HTTP traffic on port 443 -> 54602",
+                                        "HTTP traffic on port 33552 -> 443",
+                                        "HTTP traffic on port 54598 -> 443",
+                                        "HTTP traffic on port 443 -> 54600",
+                                        "HTTP traffic on port 54630 -> 443",
+                                        "HTTP traffic on port 54628 -> 443",
+                                        "HTTP traffic on port 54634 -> 443",
+                                        "HTTP traffic on port 48132 -> 443",
+                                        "HTTP traffic on port 54624 -> 443",
+                                        "HTTP traffic on port 55292 -> 443",
+                                        "HTTP traffic on port 51402 -> 443",
+                                        "HTTP traffic on port 54588 -> 443"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1105",
+                            "name": "Ingress Tool Transfer",
+                            "link": "https://attack.mitre.org/techniques/T1105/",
+                            "description": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through alternate protocols such as ftp. Once present, adversaries may also transfer/spread tools between victim devices within a compromised environment (i.e. Lateral Tool Transfer). \nOn Windows, adversaries may use various utilities to download tools, such as copy, finger, certutil, and PowerShell commands such as IEX(New-Object Net.WebClient).downloadString() and Invoke-WebRequest. On Linux and macOS systems, a variety of utilities also exist, such as curl, scp, sftp, tftp, rsync, finger, and wget.  A number of these tools, such as wget, curl, and scp, also exist on ESXi. After downloading a file, a threat actor may attempt to verify its integrity by checking its hash value (e.g., via certutil -hashfile).\nAdversaries may also abuse installers and package managers, such as yum or winget, to download tools to victim hosts. Adversaries have also abused file application features, such as the Windows search-ms protocol handler, to deliver malicious files to victims through remote file searches invoked by User Execution (typically after interacting with Phishing lures).\nFiles can also be transferred using various Web Services as well as native or otherwise present tools on the victim system. In some cases, adversaries may be able to leverage services that sync between a web-based and an on-premises client, such as Dropbox or OneDrive, to transfer files onto victim systems. For example, by compromising a cloud account and logging into the service's web portal, an adversary may be able to trigger an automatic syncing process that transfers the file onto the victim's machine.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Downloads files from webservers via HTTP",
+                                    "match_data": [
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: nQ/JPBDr2FTMBayz6ZFzNw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /home.html HTTP/1.1Host: mojahed.freeasphost.netConnection: keep-aliveUpgrade-Insecure-Requests: 1User-Agent: Mozilla/5.0 (Linux; Android 12; Generic Android-x86_64 Build/SP2A.220305.012; wv) Appl",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: lz1RTGqncBuH+Oo7Mn/Yeg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: /jJZu1tqXz078oid6ZkzCw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: N20f+wv9r+z5uGthyZFOyw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: G/dCtRUtJwKUZVyZQOqxvQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: NChPkCPv2CHj4N4rOOKysw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: rGZttVKP0CqscmJ0suw1Ng==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: xLs7TQGybcHigUjP5MGSPg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: xmoujYCXDNuQ13S2NCoI9A==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: wN+3IG7ONLyg8FlroRQ1mw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: YD0ps3JYl5AhN3lZzLivbA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: g1Ry5IPGVmLBCAkmywpwgQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: tKeQfxDVhgQhJvEbeAqQbA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: Bxlwj4Q0W6qNhEZNCh4niw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: QwrOS6l3nDQnFQZT1je/MQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: pC0SUgHMiyqeeK1b/9qeaA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: 1NqjUhmc8riSF9EAmqRvtg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: YO8BcpCcZ0PgY3gP+dPEzg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: qxW13eriD9nHT/8XTDs3kw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: uBTaKoqnjVt2UoEa7GFKDA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: msEKFFNDBmi+pRozEbgFXg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: c/39dO/CoTOe8UxaDvDiUw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: t0j8vPfGiUOTZ44jbP4hFA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: s3zegjVWrqewENGe5UxATQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: wMc/DRFch7/oBmxCx79GdA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: W6ls6CiH7+gfwKUCqrxmTA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: Nhk6HgV7o1x5u3bl5QpQ3g==Sec-WebSocket-Version: 13Upgrade: websocket"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1095",
+                            "name": "Non-Application Layer Protocol",
+                            "link": "https://attack.mitre.org/techniques/T1095/",
+                            "description": "Adversaries may use an OSI non-application layer protocol for communication between host and C2 server or among infected hosts within a network. The list of possible protocols is extensive. Specific examples include use of network layer protocols, such as the Internet Control Message Protocol (ICMP), transport layer protocols, such as the User Datagram Protocol (UDP), session layer protocols, such as Socket Secure (SOCKS), as well as redirected/tunneled protocols, such as Serial over LAN (SOL).\nICMP communication between hosts is one example. Because ICMP is part of the Internet Protocol Suite, it is required to be implemented by all IP-compatible hosts. However, it is not as commonly monitored as other Internet Protocols such as TCP or UDP and may be used by adversaries to hide communications.\nIn ESXi environments, adversaries may leverage the Virtual Machine Communication Interface (VMCI) for communication between guest virtual machines and the ESXi host. This traffic is similar to client-server communications on traditional network sockets but is localized to the physical machine running the ESXi host, meaning it does not traverse external networks (routers, switches). This results in communications that are invisible to external monitoring and standard networking tools like tcpdump, netstat, nmap, and Wireshark. By adding a VMCI backdoor to a compromised ESXi host, adversaries may persistently regain access from any guest VM to the compromised ESXi host\u2019s backdoor, regardless of network segmentation or firewall rules in place.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Downloads files from webservers via HTTP",
+                                    "match_data": [
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: nQ/JPBDr2FTMBayz6ZFzNw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /home.html HTTP/1.1Host: mojahed.freeasphost.netConnection: keep-aliveUpgrade-Insecure-Requests: 1User-Agent: Mozilla/5.0 (Linux; Android 12; Generic Android-x86_64 Build/SP2A.220305.012; wv) Appl",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: lz1RTGqncBuH+Oo7Mn/Yeg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: /jJZu1tqXz078oid6ZkzCw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: N20f+wv9r+z5uGthyZFOyw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: G/dCtRUtJwKUZVyZQOqxvQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: NChPkCPv2CHj4N4rOOKysw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: rGZttVKP0CqscmJ0suw1Ng==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: xLs7TQGybcHigUjP5MGSPg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: xmoujYCXDNuQ13S2NCoI9A==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: wN+3IG7ONLyg8FlroRQ1mw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: YD0ps3JYl5AhN3lZzLivbA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: g1Ry5IPGVmLBCAkmywpwgQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: tKeQfxDVhgQhJvEbeAqQbA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: Bxlwj4Q0W6qNhEZNCh4niw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: QwrOS6l3nDQnFQZT1je/MQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: pC0SUgHMiyqeeK1b/9qeaA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: 1NqjUhmc8riSF9EAmqRvtg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: YO8BcpCcZ0PgY3gP+dPEzg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: qxW13eriD9nHT/8XTDs3kw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: uBTaKoqnjVt2UoEa7GFKDA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: msEKFFNDBmi+pRozEbgFXg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: c/39dO/CoTOe8UxaDvDiUw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: t0j8vPfGiUOTZ44jbP4hFA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: s3zegjVWrqewENGe5UxATQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: wMc/DRFch7/oBmxCx79GdA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: W6ls6CiH7+gfwKUCqrxmTA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: Nhk6HgV7o1x5u3bl5QpQ3g==Sec-WebSocket-Version: 13Upgrade: websocket"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Performs DNS lookups",
+                                    "match_data": [
+                                        "queries for: mojahed.freeasphost.net"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1071",
+                            "name": "Application Layer Protocol",
+                            "link": "https://attack.mitre.org/techniques/T1071/",
+                            "description": "Adversaries may communicate using OSI application layer protocols to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server. \nAdversaries may utilize many different protocols, including those used for web browsing, transferring files, electronic mail, DNS, or publishing/subscribing. For connections that occur internally within an enclave (such as those between a proxy or pivot node and other nodes), commonly used protocols are SMB, SSH, or RDP. ",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Downloads files from webservers via HTTP",
+                                    "match_data": [
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: nQ/JPBDr2FTMBayz6ZFzNw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /home.html HTTP/1.1Host: mojahed.freeasphost.netConnection: keep-aliveUpgrade-Insecure-Requests: 1User-Agent: Mozilla/5.0 (Linux; Android 12; Generic Android-x86_64 Build/SP2A.220305.012; wv) Appl",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: lz1RTGqncBuH+Oo7Mn/Yeg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: /jJZu1tqXz078oid6ZkzCw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: N20f+wv9r+z5uGthyZFOyw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: G/dCtRUtJwKUZVyZQOqxvQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: NChPkCPv2CHj4N4rOOKysw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: rGZttVKP0CqscmJ0suw1Ng==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: xLs7TQGybcHigUjP5MGSPg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: xmoujYCXDNuQ13S2NCoI9A==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: wN+3IG7ONLyg8FlroRQ1mw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: YD0ps3JYl5AhN3lZzLivbA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: g1Ry5IPGVmLBCAkmywpwgQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: tKeQfxDVhgQhJvEbeAqQbA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: Bxlwj4Q0W6qNhEZNCh4niw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: QwrOS6l3nDQnFQZT1je/MQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: pC0SUgHMiyqeeK1b/9qeaA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: 1NqjUhmc8riSF9EAmqRvtg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: YO8BcpCcZ0PgY3gP+dPEzg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: qxW13eriD9nHT/8XTDs3kw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: uBTaKoqnjVt2UoEa7GFKDA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: msEKFFNDBmi+pRozEbgFXg==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: c/39dO/CoTOe8UxaDvDiUw==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: t0j8vPfGiUOTZ44jbP4hFA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: s3zegjVWrqewENGe5UxATQ==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: wMc/DRFch7/oBmxCx79GdA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: W6ls6CiH7+gfwKUCqrxmTA==Sec-WebSocket-Version: 13Upgrade: websocket",
+                                        "GET /Con HTTP/1.1Connection: UpgradeHost: 91.205.175.24:443Sec-WebSocket-Key: Nhk6HgV7o1x5u3bl5QpQ3g==Sec-WebSocket-Version: 13Upgrade: websocket"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Performs DNS lookups",
+                                    "match_data": [
+                                        "queries for: mojahed.freeasphost.net"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Uses HTTPS",
+                                    "match_data": [
+                                        "HTTP traffic on port 46794 -> 443",
+                                        "HTTP traffic on port 443 -> 54618",
+                                        "HTTP traffic on port 443 -> 54616",
+                                        "HTTP traffic on port 54616 -> 443",
+                                        "HTTP traffic on port 443 -> 54610",
+                                        "HTTP traffic on port 54612 -> 443",
+                                        "HTTP traffic on port 54590 -> 443",
+                                        "HTTP traffic on port 54594 -> 443",
+                                        "HTTP traffic on port 443 -> 54614",
+                                        "HTTP traffic on port 443 -> 54612",
+                                        "HTTP traffic on port 53142 -> 443",
+                                        "HTTP traffic on port 54606 -> 443",
+                                        "HTTP traffic on port 54552 -> 443",
+                                        "HTTP traffic on port 43190 -> 443",
+                                        "HTTP traffic on port 54602 -> 443",
+                                        "HTTP traffic on port 443 -> 54628",
+                                        "HTTP traffic on port 443 -> 54626",
+                                        "HTTP traffic on port 443 -> 54588",
+                                        "HTTP traffic on port 443 -> 54620",
+                                        "HTTP traffic on port 54636 -> 443",
+                                        "HTTP traffic on port 443 -> 43190",
+                                        "HTTP traffic on port 55284 -> 443",
+                                        "HTTP traffic on port 443 -> 54624",
+                                        "HTTP traffic on port 443 -> 54622",
+                                        "HTTP traffic on port 443 -> 54590",
+                                        "HTTP traffic on port 443 -> 33552",
+                                        "HTTP traffic on port 54632 -> 443",
+                                        "HTTP traffic on port 443 -> 54594",
+                                        "HTTP traffic on port 443 -> 53142",
+                                        "HTTP traffic on port 443 -> 54592",
+                                        "HTTP traffic on port 54626 -> 443",
+                                        "HTTP traffic on port 54622 -> 443",
+                                        "HTTP traffic on port 55290 -> 443",
+                                        "HTTP traffic on port 54618 -> 443",
+                                        "HTTP traffic on port 54620 -> 443",
+                                        "HTTP traffic on port 443 -> 54632",
+                                        "HTTP traffic on port 443 -> 54598",
+                                        "HTTP traffic on port 54592 -> 443",
+                                        "HTTP traffic on port 443 -> 54630",
+                                        "HTTP traffic on port 443 -> 54552",
+                                        "HTTP traffic on port 443 -> 54596",
+                                        "HTTP traffic on port 54614 -> 443",
+                                        "HTTP traffic on port 54610 -> 443",
+                                        "HTTP traffic on port 443 -> 54636",
+                                        "HTTP traffic on port 443 -> 51402",
+                                        "HTTP traffic on port 443 -> 54634",
+                                        "HTTP traffic on port 54596 -> 443",
+                                        "HTTP traffic on port 54608 -> 443",
+                                        "HTTP traffic on port 443 -> 54560",
+                                        "HTTP traffic on port 54604 -> 443",
+                                        "HTTP traffic on port 443 -> 48108",
+                                        "HTTP traffic on port 54600 -> 443",
+                                        "HTTP traffic on port 55282 -> 443",
+                                        "HTTP traffic on port 46804 -> 443",
+                                        "HTTP traffic on port 54560 -> 443",
+                                        "HTTP traffic on port 443 -> 54606",
+                                        "HTTP traffic on port 443 -> 54604",
+                                        "HTTP traffic on port 443 -> 54608",
+                                        "HTTP traffic on port 48108 -> 443",
+                                        "HTTP traffic on port 443 -> 54602",
+                                        "HTTP traffic on port 33552 -> 443",
+                                        "HTTP traffic on port 54598 -> 443",
+                                        "HTTP traffic on port 443 -> 54600",
+                                        "HTTP traffic on port 54630 -> 443",
+                                        "HTTP traffic on port 54628 -> 443",
+                                        "HTTP traffic on port 54634 -> 443",
+                                        "HTTP traffic on port 48132 -> 443",
+                                        "HTTP traffic on port 54624 -> 443",
+                                        "HTTP traffic on port 55292 -> 443",
+                                        "HTTP traffic on port 51402 -> 443",
+                                        "HTTP traffic on port 54588 -> 443"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0038",
+                    "name": "Network Effects",
+                    "link": "https://attack.mitre.org/tactics/TA0038/",
+                    "description": "The adversary is trying to intercept or manipulate network traffic to or from a device.\n\nThis category refers to network-based techniques that an adversary may be able to use to fulfill his or her objectives without access to the mobile device itself. These include techniques to intercept or manipulate network traffic to and from the mobile device.",
+                    "techniques": [
+                        {
+                            "id": "T1449",
+                            "name": "Exploit SS7 to Redirect Phone Calls/SMS",
+                            "link": "https://attack.mitre.org/techniques/T1449/",
+                            "description": "An adversary could exploit signaling system vulnerabilities to redirect calls or text messages (SMS) to a phone number under the attacker's control. The adversary could then act as an adversary-in-the-middle to intercept or manipulate the communication.      Interception of SMS messages could enable adversaries to obtain authentication codes used for multi-factor authentication.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to send SMS in the background",
+                                    "match_data": [
+                                        "android.permission.SEND_SMS"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0034",
+                    "name": "Impact",
+                    "link": "https://attack.mitre.org/tactics/TA0034/",
+                    "description": "The adversary is trying to manipulate, interrupt, or destroy your devices and data.\n\nThe impact tactic consists of techniques used by the adversary to execute his or her mission objectives but that do not cleanly fit into another category such as Collection. Mission objectives vary based on each adversary's goals, but examples include toll fraud, destruction of device data, or locking the user out of his or her device until a ransom is paid.",
+                    "techniques": [
+                        {
+                            "id": "T1448",
+                            "name": "Carrier Billing Fraud",
+                            "link": "https://attack.mitre.org/techniques/T1448/",
+                            "description": "A malicious app may trigger fraudulent charges on a victim\u2019s carrier billing statement in several different ways, including SMS toll fraud and SMS shortcodes that make purchases.\nPerforming SMS fraud relies heavily upon the fact that, when making SMS purchases, the carriers perform device verification but not user verification. This allows adversaries to make purchases on behalf of the user, with little or no user interaction.\nMalicious applications may also perform toll billing, which occurs when carriers provide payment endpoints over a web page. The application connects to the web page over cellular data so the carrier can directly verify the number, or the application must retrieve a code sent via SMS and enter it into the web page.\nOn iOS, apps cannot send SMS messages.\nOn Android, apps must hold the SEND_SMS permission to send SMS messages. Additionally, Android version 4.2 and above has mitigations against this threat by requiring user consent before allowing SMS messages to be sent to premium numbers .",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to send SMS in the background",
+                                    "match_data": [
+                                        "android.permission.SEND_SMS"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "links": {
+        "self": "https://www.virustotal.com/api/v3/files/0aec13f808451745f9275d8e317fb8d3fe2fb82509367b521da448ff10d35fb8/behaviour_mitre_trees"
+    }
+}

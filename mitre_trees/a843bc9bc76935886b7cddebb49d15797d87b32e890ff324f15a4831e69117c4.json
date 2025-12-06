@@ -1,0 +1,193 @@
+{
+    "data": {
+        "Zenbox android": {
+            "tactics": [
+                {
+                    "id": "TA0032",
+                    "name": "Discovery",
+                    "link": "https://attack.mitre.org/tactics/TA0032/",
+                    "description": "The adversary is trying to figure out your environment.\n\nDiscovery consists of techniques that allow the adversary to gain knowledge about the characteristics of the mobile device and potentially other networked systems. When adversaries gain access to a new system, they must orient themselves to what they now have control of and what benefits operating from that system give to their current objective or overall goals during the intrusion. The operating system may provide capabilities that aid in this post-compromise information-gathering phase.",
+                    "techniques": [
+                        {
+                            "id": "T1421",
+                            "name": "System Network Connections Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1421/",
+                            "description": "Adversaries may attempt to get a listing of network connections to or from the compromised device they are currently accessing or from remote systems by querying for information over the network. \nThis is typically accomplished by utilizing device APIs to collect information about nearby networks, such as Wi-Fi, Bluetooth, and cellular tower connections. On Android, this can be done by querying the respective APIs: \n\n\nWifiInfo for information about the current Wi-Fi connection, as well as nearby Wi-Fi networks. Querying the WiFiInfo API requires the application to hold the ACCESS_FINE_LOCATION permission. \n\n\nBluetoothAdapter for information about Bluetooth devices, which also requires the application to hold several permissions granted by the user at runtime. \n\n\nFor Android versions prior to Q, applications can use the TelephonyManager.getNeighboringCellInfo() method. For Q and later, applications can use the TelephonyManager.getAllCellInfo() method. Both methods require the application hold the ACCESS_FINE_LOCATION permission.\n\n",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Checks an internet connection is available",
+                                    "match_data": [
+                                        "android.net.ConnectivityManager.getAllNetworkInfo",
+                                        "android.net.NetworkInfo.getState",
+                                        "android.net.wifi.WifiManager.getConnectionInfo"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1430",
+                            "name": "Location Tracking",
+                            "link": "https://attack.mitre.org/techniques/T1430/",
+                            "description": "Adversaries may track a device\u2019s physical location through use of standard operating system APIs via malicious or exploited applications on the compromised device. \nOn Android, applications holding the ACCESS_COAURSE_LOCATION or ACCESS_FINE_LOCATION permissions provide access to the device\u2019s physical location. On Android 10 and up, declaration of the ACCESS_BACKGROUND_LOCATION permission in an application\u2019s manifest will allow applications to request location access even when the application is running in the background. Some adversaries have utilized integration of Baidu map services to retrieve geographical location once the location access permissions had been obtained. \nOn iOS, applications must include the NSLocationWhenInUseUsageDescription, NSLocationAlwaysAndWhenInUseUsageDescription, and/or NSLocationAlwaysUsageDescription keys in their Info.plist file depending on the extent of requested access to location information. On iOS 8.0 and up, applications call requestWhenInUseAuthorization() to request access to location information when the application is in use or requestAlwaysAuthorization() to request access to location information regardless of whether the application is in use. With elevated privileges, an adversary may be able to access location data without explicit user consent with the com.apple.locationd.preauthorized entitlement key.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the phones location (GPS)",
+                                    "match_data": [
+                                        "android.location.LocationManager.getLastKnownLocation",
+                                        "android.location.Location.getLongitude",
+                                        "android.location.Location.getLatitude",
+                                        "android.telephony.TelephonyManager.getCellLocation"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to query the current location",
+                                    "match_data": [
+                                        "android.permission.ACCESS_FINE_LOCATION"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1426",
+                            "name": "System Information Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1426/",
+                            "description": "Adversaries may attempt to get detailed information about a device\u2019s operating system and hardware, including versions, patches, and architecture. Adversaries may use the information from System Information Discovery during automated discovery to shape follow-on behaviors, including whether or not to fully infects the target and/or attempts specific actions. \nOn Android, much of this information is programmatically accessible to applications through the android.os.Build class.  iOS is much more restrictive with what information is visible to applications. Typically, applications will only be able to query the device model and which version of iOS it is running. ",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the unqiue device ID (IMEI, MEID or ESN)",
+                                    "match_data": [
+                                        "android.telephony.TelephonyManager.getDeviceId"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries several sensitive phone informations",
+                                    "match_data": [
+                                        "\"os\"",
+                                        "\"type\"",
+                                        "\"phone\"",
+                                        "\"imei\"",
+                                        "\"time\""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0035",
+                    "name": "Collection",
+                    "link": "https://attack.mitre.org/tactics/TA0035/",
+                    "description": "The adversary is trying to gather data of interest to their goal.\n\nCollection consists of techniques used to identify and gather information, such as sensitive files, from a target network prior to exfiltration. This category also covers locations on a system or network where the adversary may look for information to exfiltrate.",
+                    "techniques": [
+                        {
+                            "id": "T1430",
+                            "name": "Location Tracking",
+                            "link": "https://attack.mitre.org/techniques/T1430/",
+                            "description": "Adversaries may track a device\u2019s physical location through use of standard operating system APIs via malicious or exploited applications on the compromised device. \nOn Android, applications holding the ACCESS_COAURSE_LOCATION or ACCESS_FINE_LOCATION permissions provide access to the device\u2019s physical location. On Android 10 and up, declaration of the ACCESS_BACKGROUND_LOCATION permission in an application\u2019s manifest will allow applications to request location access even when the application is running in the background. Some adversaries have utilized integration of Baidu map services to retrieve geographical location once the location access permissions had been obtained. \nOn iOS, applications must include the NSLocationWhenInUseUsageDescription, NSLocationAlwaysAndWhenInUseUsageDescription, and/or NSLocationAlwaysUsageDescription keys in their Info.plist file depending on the extent of requested access to location information. On iOS 8.0 and up, applications call requestWhenInUseAuthorization() to request access to location information when the application is in use or requestAlwaysAuthorization() to request access to location information regardless of whether the application is in use. With elevated privileges, an adversary may be able to access location data without explicit user consent with the com.apple.locationd.preauthorized entitlement key.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the phones location (GPS)",
+                                    "match_data": [
+                                        "android.location.LocationManager.getLastKnownLocation",
+                                        "android.location.Location.getLongitude",
+                                        "android.location.Location.getLatitude",
+                                        "android.telephony.TelephonyManager.getCellLocation"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to query the current location",
+                                    "match_data": [
+                                        "android.permission.ACCESS_FINE_LOCATION"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1429",
+                            "name": "Audio Capture",
+                            "link": "https://attack.mitre.org/techniques/T1429/",
+                            "description": "Adversaries may capture audio to collect information by leveraging standard operating system APIs of a mobile device. Examples of audio information adversaries may target include user conversations, surroundings, phone calls, or other sensitive information. \nAndroid and iOS, by default, require that applications request device microphone access from the user.  \nOn Android devices, applications must hold the RECORD_AUDIO permission to access the microphone or the CAPTURE_AUDIO_OUTPUT permission to access audio output. Because Android does not allow third-party applications to hold the CAPTURE_AUDIO_OUTPUT permission by default, only privileged applications, such as those distributed by Google or the device vendor, can access audio output. However, adversaries may be able to gain this access after successfully elevating their privileges. With the CAPTURE_AUDIO_OUTPUT permission, adversaries may pass the MediaRecorder.AudioSource.VOICE_CALL constant to MediaRecorder.setAudioOutput, allowing capture of both voice call uplink and downlink. \nOn iOS devices, applications must include the NSMicrophoneUsageDescription key in their Info.plist file to access the microphone.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Accesses the audio/media managers",
+                                    "match_data": [
+                                        "android.media.MediaRecorder.<init>"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Has permission to record audio in the background",
+                                    "match_data": [
+                                        "android.permission.RECORD_AUDIO"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Records audio/media",
+                                    "match_data": [
+                                        "android.media.MediaRecorder.start"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1513",
+                            "name": "Screen Capture",
+                            "link": "https://attack.mitre.org/techniques/T1513/",
+                            "description": "Adversaries may use screen capture to collect additional information about a target device, such as applications running in the foreground, user data, credentials, or other sensitive information. Applications running in the background can capture screenshots or videos of another application running in the foreground by using the Android MediaProjectionManager (generally requires the device user to grant consent). Background applications can also use Android accessibility services to capture screen contents being displayed by a foreground application. An adversary with root access or Android Debug Bridge (adb) access could call the Android screencap or screenrecord commands. ",
+                            "signatures": [
+                                {
+                                    "severity": "LOW",
+                                    "description": "Contains a screen recorder (to take screenshot)",
+                                    "match_data": [
+                                        "getDisplayMetrics and createVirtualDisplay"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0007",
+                    "name": "Discovery",
+                    "link": "https://attack.mitre.org/tactics/TA0007/",
+                    "description": "The adversary is trying to figure out your environment.\n\nDiscovery consists of techniques an adversary may use to gain knowledge about the system and internal network. These techniques help adversaries observe the environment and orient themselves before deciding how to act. They also allow adversaries to explore what they can control and what\u2019s around their entry point in order to discover how it could benefit their current objective. Native operating system tools are often used toward this post-compromise information-gathering objective. ",
+                    "techniques": [
+                        {
+                            "id": "T1518",
+                            "name": "Software Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1518/",
+                            "description": "Adversaries may attempt to get a listing of software and software versions that are installed on a system or in a cloud environment. Adversaries may use the information from Software Discovery during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\nSuch software may be deployed widely across the environment for configuration management or security reasons, such as Software Deployment Tools, and may allow adversaries broad access to infect devices or move laterally.\nAdversaries may attempt to enumerate software for a variety of reasons, such as figuring out what security measures are present or if the compromised system has a version of software that is vulnerable to Exploitation for Privilege Escalation."
+                        },
+                        {
+                            "id": "T1518.001",
+                            "name": "Security Software Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1518/001/",
+                            "description": "Adversaries may attempt to get a listing of security software, configurations, defensive tools, and sensors that are installed on a system or in a cloud environment. This may include things such as cloud monitoring agents and anti-virus. Adversaries may use the information from Security Software Discovery during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\nExample commands that can be used to obtain security software information are netsh, reg query with Reg, dir with cmd, and Tasklist, but other indicators of discovery behavior may be more specific to the type of software or security system the adversary is looking for. It is becoming more common to see macOS malware perform checks for LittleSnitch and KnockKnock software.\nAdversaries may also utilize the Cloud API to discover cloud-native security software installed on compute infrastructure, such as the AWS CloudWatch agent, Azure VM Agent, and Google Cloud Monitor agent. These agents  may collect  metrics and logs from the VM, which may be centrally aggregated in a cloud-based monitoring platform.",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "May try to detect the virtual machine to hinder analysis (VM artifact strings found in memory)",
+                                    "match_data": [
+                                        "SHA1-Digest: y6AWAjhVL7kCY0uiHGFsilWIsHs="
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "links": {
+        "self": "https://www.virustotal.com/api/v3/files/a843bc9bc76935886b7cddebb49d15797d87b32e890ff324f15a4831e69117c4/behaviour_mitre_trees"
+    }
+}

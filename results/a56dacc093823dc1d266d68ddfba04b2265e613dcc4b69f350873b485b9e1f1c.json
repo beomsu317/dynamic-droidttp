@@ -1,0 +1,148 @@
+{
+    "initial_timestamp": 1764680671.972369,
+    "TA0035": {
+        "tactic_name": "Collection",
+        "techniques": [
+            {
+                "technique_id": "T1532",
+                "technique_name": "Archive Collected Data",
+                "operator": "Cipher.getInstance",
+                "context": "transformation=RSA/ECB/PKCS1Padding",
+                "confidence": "LOW",
+                "execution_timestamp": 1764680673105
+            },
+            {
+                "technique_id": "T1533",
+                "technique_name": "Data from Local System",
+                "operator": "open",
+                "context": "fname=/data/user/0/com.abbondioendrizzi.antivirus.supercleaner/databases/dbytes.db, flags=0xa8042",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673203
+            },
+            {
+                "technique_id": "T1533",
+                "technique_name": "Data from Local System",
+                "operator": "open",
+                "context": "fname=/data/user/0/com.abbondioendrizzi.antivirus.supercleaner/databases/dbytes.db-journal, flags=0xa8042",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673205
+            },
+            {
+                "technique_id": "T1533",
+                "technique_name": "Data from Local System",
+                "operator": "Environment.getExternalStorageDirectory",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673403
+            },
+            {
+                "technique_id": "T1533",
+                "technique_name": "Data from Local System",
+                "operator": "Environment.getExternalStorageDirectory",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673407
+            }
+        ]
+    },
+    "TA0037": {
+        "tactic_name": "Command and Control",
+        "techniques": [
+            {
+                "technique_id": "T1521.002",
+                "technique_name": "Encrypted Channel: Asymmetric Cryptography",
+                "operator": "Cipher.getInstance",
+                "context": "transformation=RSA/ECB/PKCS1Padding",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673105
+            }
+        ]
+    },
+    "TA0034": {
+        "tactic_name": "Impact",
+        "techniques": [
+            {
+                "technique_id": "T1471",
+                "technique_name": "Data Encrypted for Impact",
+                "operator": "Cipher.getInstance",
+                "context": "transformation=RSA/ECB/PKCS1Padding",
+                "confidence": "LOW",
+                "execution_timestamp": 1764680673105
+            }
+        ]
+    },
+    "TA0028": {
+        "tactic_name": "Persistence",
+        "techniques": [
+            {
+                "technique_id": "T1541",
+                "technique_name": "Foreground Persistence",
+                "operator": "Service.startForeground",
+                "context": "arg1=1000, arg2=Notification(channel=1000 shortcut=null contentView=com.abbondioendrizzi.antivirus.supercleaner/0x7f0d0095 vibrate=null sound=null defaults=0x0 flags=0x0 color=0x00000000 vis=PUBLIC)",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764680673308
+            }
+        ]
+    },
+    "TA0032": {
+        "tactic_name": "Discovery",
+        "techniques": [
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "Environment.getExternalStorageDirectory",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673403
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "Environment.getExternalStorageDirectory",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764680673407
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.hardware",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764680673501
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.board",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764680673502
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.board.platform",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764680673502
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764680677823
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.sdk",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764680677830
+            }
+        ]
+    }
+}

@@ -1,0 +1,2518 @@
+{
+    "initial_timestamp": 1764770604.8718197,
+    "TA0030": {
+        "tactic_name": "Defense Evasion",
+        "techniques": [
+            {
+                "technique_id": "T1630.002",
+                "technique_name": "Indicator Removal on Host: File Deletion",
+                "operator": "unlink",
+                "context": "fname=/data/user/0/battle.pubg.game/app_apkprotector_dex/classes-v1.bin",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770605837
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606459
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606551
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606580
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606690
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606691
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606772
+            },
+            {
+                "technique_id": "T1633.001",
+                "technique_name": "Virtualization/Sandbox Evasion: System Checks",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606773
+            },
+            {
+                "technique_id": "T1630.002",
+                "technique_name": "Indicator Removal on Host: File Deletion",
+                "operator": "unlink",
+                "context": "fname=/data/user/0/battle.pubg.game/cache/WebView/.com.google.Chrome.ny6Jp3",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606847
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770612643
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612643
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770612645
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612645
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770612820
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612820
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770612821
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612822
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770612823
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612823
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770612824
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612824
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770616393
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616393
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770616406
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616406
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770616411
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616411
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770616413
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616413
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770616416
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616416
+            },
+            {
+                "technique_id": "T1630.002",
+                "technique_name": "Indicator Removal on Host: File Deletion",
+                "operator": "unlink",
+                "context": "fname=/data/user_de/0/battle.pubg.game/code_cache/com.android.opengl.shaders_cache",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770616898
+            },
+            {
+                "technique_id": "T1630.002",
+                "technique_name": "Indicator Removal on Host: File Deletion",
+                "operator": "unlink",
+                "context": "fname=/data/user_de/0/battle.pubg.game/code_cache/com.android.skia.shaders_cache",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770616911
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770621896
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770621896
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770621897
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770621897
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770621899
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770621899
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770629923
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770629923
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770629926
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770629926
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770629928
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770629928
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770766092
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766092
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770766094
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766094
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770766098
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766098
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770767589
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770767589
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770767592
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770767592
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770767593
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770767594
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770769119
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770769119
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770769123
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770769123
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770769125
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770769125
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770804495
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770804495
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770804503
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770804503
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770804505
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770804505
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771125554
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771125554
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771125557
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771125557
+            },
+            {
+                "technique_id": "T1629.001",
+                "technique_name": "Impair Defenses: Prevent Application Removal",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771125561
+            },
+            {
+                "technique_id": "T1516",
+                "technique_name": "Input Injection",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771125561
+            }
+        ]
+    },
+    "TA0032": {
+        "tactic_name": "Discovery",
+        "techniques": [
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606254
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606458
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606459
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606459
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606547
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606551
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606551
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606551
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606580
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606581
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606690
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606690
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606690
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606690
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606691
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606691
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606691
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606743
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606744
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606772
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606772
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606772
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606772
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606773
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.model",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606773
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606773
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.hardware",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606782
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.product.board",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606783
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.board.platform",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606784
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606863
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606864
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.version.release",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606865
+            },
+            {
+                "technique_id": "T1426",
+                "technique_name": "System Information Discovery",
+                "operator": "__system_property_get",
+                "context": "ro.build.id",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770607324
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770626311
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770646421
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770666509
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770686597
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770706695
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770726775
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770746889
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770766948
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770786982
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770807041
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770827121
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770847199
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770867276
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770887353
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770907651
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770927833
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770947967
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770968051
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770988138
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771008351
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771028442
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771048524
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771068611
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771088699
+            },
+            {
+                "technique_id": "T1423",
+                "technique_name": "Network Service Scanning",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771108778
+            }
+        ]
+    },
+    "TA0037": {
+        "tactic_name": "Command and Control",
+        "techniques": [
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606254
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606254
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770626311
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770626311
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770646422
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770646422
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770666510
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770666510
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770686597
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770686598
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770706695
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770706695
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770726775
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770726776
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770746889
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770746890
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766948
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766948
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770786983
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770786983
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770807042
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770807042
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770827121
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770827121
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770847199
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770847200
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770867277
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770867277
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770887353
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770887354
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770907651
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770907652
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770927833
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770927833
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770947967
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770947967
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770968052
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770968052
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770988138
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770988139
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771008352
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771008352
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771028442
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771028443
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771048525
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771048525
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771068612
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771068612
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771088699
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771088700
+            },
+            {
+                "technique_id": "T1437",
+                "technique_name": "Application Layer Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771108779
+            },
+            {
+                "technique_id": "T1509",
+                "technique_name": "Non-Standard Port",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771108779
+            }
+        ]
+    },
+    "TA0036": {
+        "tactic_name": "Exfiltration",
+        "techniques": [
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606254
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770606255
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770626312
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770626312
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770646422
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770646422
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770666510
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770666510
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770686598
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770686598
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770706696
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770706696
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770726776
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770726776
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770746890
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770746890
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770766948
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770766948
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770786983
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770786983
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770807043
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770807043
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770827122
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770827122
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770847200
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770847201
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770867277
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770867277
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770887354
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770887354
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770907652
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770907652
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770927834
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770927834
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770947968
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770947968
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770968052
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770968052
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770988139
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770988139
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771008352
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771008352
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771028443
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771028443
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771048526
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771048526
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771068612
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771068613
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771088700
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771088700
+            },
+            {
+                "technique_id": "T1639",
+                "technique_name": "Exfiltration Over Alternative Protocol",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "LOW",
+                "execution_timestamp": 1764771108779
+            },
+            {
+                "technique_id": "T1646",
+                "technique_name": "Exfiltration Over C2 Channel",
+                "operator": "connect",
+                "context": "215.185.31.113:82",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764771108779
+            }
+        ]
+    },
+    "TA0031": {
+        "tactic_name": "Credential Access",
+        "techniques": [
+            {
+                "technique_id": "T1414",
+                "technique_name": "Clipboard Data",
+                "operator": "ClipboardManager.addPrimaryClipChangedListener",
+                "context": "listener=[object Object]",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770606704
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612643
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612645
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612779
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612779
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612780
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612782
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612784
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612785
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612786
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612788
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612789
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612820
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612822
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612823
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770612824
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService",
+                "context": "instance=summers.ofsixty.nine.pcebd03b8@750db9d",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770613891
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616335
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616337
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616338
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.getText",
+                "context": "",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616338
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.performAction",
+                "context": "action=16",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616340
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.performAction",
+                "context": "action=16",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616353
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityNodeInfo.performAction",
+                "context": "action=16",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616389
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616394
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616406
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616411
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616413
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770616417
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770621896
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770621898
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770621899
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770629924
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770629926
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770629928
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766092
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766094
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770766098
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770767590
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770767592
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770767594
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770769119
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770769123
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770769125
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770804495
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770804503
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764770804505
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771125555
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=1",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771125557
+            },
+            {
+                "technique_id": "T1453",
+                "technique_name": "Abuse Accessibility Features",
+                "operator": "AccessibilityService.performGlobalAction",
+                "context": "action=2",
+                "confidence": "HIGH",
+                "execution_timestamp": 1764771125561
+            }
+        ]
+    },
+    "TA0034": {
+        "tactic_name": "Impact",
+        "techniques": [
+            {
+                "technique_id": "T1641.001",
+                "technique_name": "Data Manipulation: Transmitted Data Manipulation",
+                "operator": "ClipboardManager.addPrimaryClipChangedListener",
+                "context": "listener=[object Object]",
+                "confidence": "LOW",
+                "execution_timestamp": 1764770606704
+            }
+        ]
+    },
+    "TA0028": {
+        "tactic_name": "Persistence",
+        "techniques": [
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607820
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607820
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607821
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607821
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607821
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607822
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607822
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770607823
+            },
+            {
+                "technique_id": "T1624.001",
+                "technique_name": "Event Triggered Execution: Broadcast Receivers",
+                "operator": "BroadcastReceiver.onReceive",
+                "context": "",
+                "confidence": "MEDIUM",
+                "execution_timestamp": 1764770618058
+            }
+        ]
+    }
+}

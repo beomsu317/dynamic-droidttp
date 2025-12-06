@@ -1,0 +1,130 @@
+{
+    "data": {
+        "Zenbox android": {
+            "tactics": [
+                {
+                    "id": "TA0030",
+                    "name": "Defense Evasion",
+                    "link": "https://attack.mitre.org/tactics/TA0030/",
+                    "description": " The adversary is trying to avoid being detected.\n\nDefense evasion consists of techniques an adversary may use to evade detection or avoid other defenses. Sometimes these actions are the same as or variations of techniques in other categories that have the added benefit of subverting a particular defense or mitigation. Defense evasion may be considered a set of attributes the adversary applies to all other phases of the operation.",
+                    "techniques": [
+                        {
+                            "id": "T1406",
+                            "name": "Obfuscated Files or Information",
+                            "link": "https://attack.mitre.org/techniques/T1406/",
+                            "description": "Adversaries may attempt to make a payload or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the device or in transit. This is common behavior that can be used across different platforms and the network to evade defenses. \nPayloads may be compressed, archived, or encrypted in order to avoid detection. These payloads may be used during Initial Access or later to mitigate detection. Portions of files can also be encoded to hide the plaintext strings that would otherwise help defenders with discovery. Payloads may also be split into separate, seemingly benign files that only reveal malicious functionality when reassembled. ",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Obfuscates method names",
+                                    "match_data": [
+                                        "24%"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0032",
+                    "name": "Discovery",
+                    "link": "https://attack.mitre.org/tactics/TA0032/",
+                    "description": "The adversary is trying to figure out your environment.\n\nDiscovery consists of techniques that allow the adversary to gain knowledge about the characteristics of the mobile device and potentially other networked systems. When adversaries gain access to a new system, they must orient themselves to what they now have control of and what benefits operating from that system give to their current objective or overall goals during the intrusion. The operating system may provide capabilities that aid in this post-compromise information-gathering phase.",
+                    "techniques": [
+                        {
+                            "id": "T1421",
+                            "name": "System Network Connections Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1421/",
+                            "description": "Adversaries may attempt to get a listing of network connections to or from the compromised device they are currently accessing or from remote systems by querying for information over the network. \nThis is typically accomplished by utilizing device APIs to collect information about nearby networks, such as Wi-Fi, Bluetooth, and cellular tower connections. On Android, this can be done by querying the respective APIs: \n\n\nWifiInfo for information about the current Wi-Fi connection, as well as nearby Wi-Fi networks. Querying the WiFiInfo API requires the application to hold the ACCESS_FINE_LOCATION permission. \n\n\nBluetoothAdapter for information about Bluetooth devices, which also requires the application to hold several permissions granted by the user at runtime. \n\n\nFor Android versions prior to Q, applications can use the TelephonyManager.getNeighboringCellInfo() method. For Q and later, applications can use the TelephonyManager.getAllCellInfo() method. Both methods require the application hold the ACCESS_FINE_LOCATION permission.\n\n",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Checks an internet connection is available",
+                                    "match_data": [
+                                        "android.net.wifi.WifiManager.getConnectionInfo",
+                                        "android.net.NetworkInfo.isConnected"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1422",
+                            "name": "System Network Configuration Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1422/",
+                            "description": "Adversaries may look for details about the network configuration and settings, such as IP and/or MAC addresses, of devices they access or through information discovery of remote systems. \nAdversaries may use the information from System Network Configuration Discovery during automated discovery to shape follow-on behaviors, including determining certain access within the target network and what actions to do next. \nOn Android, details of onboard network interfaces are accessible to apps through the java.net.NetworkInterface class. Previously, the Android TelephonyManager class could be used to gather telephony-related device identifiers, information such as the IMSI, IMEI, and phone number. However, starting with Android 10, only preloaded, carrier, the default SMS, or device and profile owner applications can access the telephony-related device identifiers. \nOn iOS, gathering network configuration information is not possible without root access. \nAdversaries may use the information from System Network Configuration Discovery during automated discovery to shape follow-on behaviors, including determining certain access within the target network and what actions to do next. ",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Checks if a SIM card is installed",
+                                    "match_data": [
+                                        "android.telephony.TelephonyManager.getSimState"
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries the SIM provider numeric MCC+MNC (mobile country code + mobile network code)",
+                                    "match_data": [
+                                        "android.telephony.TelephonyManager.getSimOperator"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "T1426",
+                            "name": "System Information Discovery",
+                            "link": "https://attack.mitre.org/techniques/T1426/",
+                            "description": "Adversaries may attempt to get detailed information about a device\u2019s operating system and hardware, including versions, patches, and architecture. Adversaries may use the information from System Information Discovery during automated discovery to shape follow-on behaviors, including whether or not to fully infects the target and/or attempts specific actions. \nOn Android, much of this information is programmatically accessible to applications through the android.os.Build class.  iOS is much more restrictive with what information is visible to applications. Typically, applications will only be able to query the device model and which version of iOS it is running. ",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries several sensitive phone informations",
+                                    "match_data": [
+                                        "\"android\"",
+                                        "\"type\"",
+                                        "\"version\"",
+                                        "\"appid\""
+                                    ]
+                                },
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries system settings",
+                                    "match_data": [
+                                        "android.net.Uri.parse(\"http://www.google.com/settings/storage?emr=0&authuser=-1&utm_source=whatsapp\")"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "TA0035",
+                    "name": "Collection",
+                    "link": "https://attack.mitre.org/tactics/TA0035/",
+                    "description": "The adversary is trying to gather data of interest to their goal.\n\nCollection consists of techniques used to identify and gather information, such as sensitive files, from a target network prior to exfiltration. This category also covers locations on a system or network where the adversary may look for information to exfiltrate.",
+                    "techniques": [
+                        {
+                            "id": "T1409",
+                            "name": "Stored Application Data",
+                            "link": "https://attack.mitre.org/techniques/T1409/",
+                            "description": "Adversaries may try to access and collect application data resident on the device. Adversaries often target popular applications, such as Facebook, WeChat, and Gmail. \nDue to mobile OS sandboxing, this technique is only possible in three scenarios: \n\nAn application stores files in unprotected external storage \nAn application stores files in its internal storage directory with insecure permissions (e.g. 777) \nThe adversary gains root permissions on the device \n",
+                            "signatures": [
+                                {
+                                    "severity": "INFO",
+                                    "description": "Queries stored mail and application accounts (e.g. Gmail or Whatsapp)",
+                                    "match_data": [
+                                        "android.accounts.AccountManager.getAccounts",
+                                        "android.accounts.Account.type",
+                                        "android.accounts.Account.name"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "links": {
+        "self": "https://www.virustotal.com/api/v3/files/0b0675d2a35e9e8a6450dfb91a13c5336f328f39e24d1931609e126d1f1e3ffe/behaviour_mitre_trees"
+    }
+}
